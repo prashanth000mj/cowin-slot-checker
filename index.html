@@ -49,8 +49,8 @@
         const checkAvailability = () => {
             message = '';
             document.getElementById('last-check').innerHTML = (new Date()).toLocaleString();
-            Array(days).fill(1).forEach((v,index) => {
-                let day = moment();
+            Array(days+1).fill(1).forEach((v,index) => {
+                let day = moment().add(-1, 'day');
                 const date = day.add(index + 1, 'day').format('DD-MM-yyy');
                 locations.forEach(location => {
                     makeCall(location, date);

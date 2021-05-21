@@ -48,7 +48,7 @@
             message = '';
             document.getElementById('last-check').innerHTML = (new Date()).toLocaleString();
             Array(days).fill(1).forEach((v,index) => {
-                let day = moment().add(-1, 'day');
+                let day = moment();
                 const date = day.add(index + 1, 'day').format('DD-MM-yyy');
                 locations.forEach(location => {
                     makeCall(location, date);
@@ -71,7 +71,7 @@
         }
     </script>
     <body>
-        <h1>Covid Vaccine Availability Notifier:</h1>
+        <h1>Covid Vaccine Availability Notifier</h1>
         <label>Check Frequency(minutes)</label>
         <input type="number" id="minute" value="1" size="2" max="60" min="1" aria-label="Next no. of days to check" placeholder="Enter the days to check for..."/>
         <br/><br/>

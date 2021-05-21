@@ -34,7 +34,7 @@
             let news = '';
             if(!data.error){
                 data.sessions.forEach(session => {
-                    news += `${session.available_capacity} slots availabe at ${session.name}(${pinode}) for ${date} - ${session.vaccine}\n`;
+                    news += `${session.available_capacity} slots(+${session.min_age_limit}) availabe at ${session.name}(${pinode}) for ${date} - ${session.vaccine}\n`;
                     if(session.available_capacity) startNotifier();
                 });
             }

@@ -95,19 +95,34 @@
         button {
             margin: 2rem 2rem 0 2rem;
         }
+        p:empty {
+            padding: 0;
+        }
+        p {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem;
+            white-space: break-spaces;
+            overflow-x: scroll;
+            color: black;
+        }
+        input, textarea {
+            text-align: center;
+        }
     </style>
     <body class="app">
         <div class="app-header">
-            <h1>Covid Vaccine Availability Notifier</h1>
+            <h1>Availability Notifier</h1>
             <span id="last-check"></span>
-            <pre id="avil"></pre>
-            <label>Check Frequency(minutes)</label>
-            <input type="number" id="minute" value="1" size="2" max="60" min="1" aria-label="Next no. of days to check" placeholder="Enter the days to check for..."/>
+            <p id="avil"></p>
+            <label>Check Frequency(minutes >0)</label>
+            <input type="number" id="minute" value="1" max="60" aria-label="Next no. of days to check" placeholder="Enter the days to check for..."/>
 
-            <label>Next no. of days to check</label>
-            <input type="number" id="days" value="1" size="2" max="15" aria-label="Next no. of days to check" placeholder="Enter the days to check for..."/>
+            <label>Next no. of days to check( > 0 && <=15)</label>
+            <input type="number" id="days" value="1" max="15" aria-label="Next no. of days to check" placeholder="Enter the days to check for..."/>
         
-            <label>Pincodes to look for (comma separated if many)</label>
+            <label>Pincodes to look for (comma separated)</label>
             <textarea type="text" id="locations" rows="3" cols="30" aria-label="Pincodes to look for" size="100" value="560066" placeholder="560066,560067"></textarea>
             
             <div>
